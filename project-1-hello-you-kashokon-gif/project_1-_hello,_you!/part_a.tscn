@@ -1,0 +1,125 @@
+[gd_scene load_steps=23 format=3 uid="uid://clwrsdsnmy3md"]
+
+[ext_resource type="PackedScene" uid="uid://clhttn3a0ep70" path="res://part_c.tscn" id="1_ys316"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ys316"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_to4tk"]
+sky_material = SubResource("ProceduralSkyMaterial_ys316")
+
+[sub_resource type="Environment" id="Environment_0jsbj"]
+background_mode = 2
+sky = SubResource("Sky_to4tk")
+tonemap_mode = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m6jki"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ys316"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to4tk"]
+albedo_color = Color(0.687731, 0.841314, 0.561457, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_0jsbj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6bo7"]
+albedo_color = Color(0.513194, 0, 0.0211262, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_eso0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trumw"]
+albedo_color = Color(0.866667, 0.235294, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7awo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0tu7"]
+albedo_color = Color(0, 0, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3xb3d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grw75"]
+albedo_color = Color(0.543049, 0.0315775, 0.0947729, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0j4pn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uojgb"]
+albedo_color = Color(0.40832, 0.24194, 0.134798, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_narcd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr1d8"]
+albedo_color = Color(0.502412, 0.272832, 0.0956414, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo5qo"]
+albedo_color = Color(0.406304, 0.242799, 0.141948, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tvfxj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2unr2"]
+albedo_color = Color(0.382686, 0.150584, 0.0182545, 1)
+
+[node name="Part_A" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0jsbj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -6371.66, -2338.01, 4.76837e-07)
+shadow_enabled = true
+
+[node name="pole (for the hoop)" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 4, 0, 0, 0, 0.2, 0, 2, 0)
+mesh = SubResource("CylinderMesh_m6jki")
+
+[node name="backboard(the basket)" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 0.2, 0, 5.15431, 0)
+mesh = SubResource("BoxMesh_ys316")
+skeleton = NodePath("../pole (for the hoop)")
+surface_material_override/0 = SubResource("StandardMaterial3D_to4tk")
+
+[node name="hoop (rim)" type="MeshInstance3D" parent="backboard(the basket)"]
+transform = Transform3D(0.399945, -0.00133945, -0.00651602, -0.00220457, -0.396354, -0.0538379, -0.00627635, 0.0538664, -0.396307, 0.007924, -0.332988, -2.29956)
+mesh = SubResource("TorusMesh_0jsbj")
+skeleton = NodePath("../../orange basketball/street (concrete)")
+surface_material_override/0 = SubResource("StandardMaterial3D_q6bo7")
+
+[node name="orange basketball" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.04643, -1.95355)
+mesh = SubResource("SphereMesh_eso0h")
+surface_material_override/0 = SubResource("StandardMaterial3D_trumw")
+
+[node name="street (concrete)" type="MeshInstance3D" parent="orange basketball"]
+transform = Transform3D(9.99141, 0, 0.414397, 0, 0.1, 0, -0.414397, 0, 9.99141, 0, -1.94922, 0)
+mesh = SubResource("BoxMesh_e7awo")
+surface_material_override/0 = SubResource("StandardMaterial3D_j0tu7")
+
+[node name="backboard (red circle)" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 0.998304, 0.00582087, 0, -0.0582087, 0.0998304, 0.0703506, 5.21932, 0.0651526)
+mesh = SubResource("BoxMesh_3xb3d")
+surface_material_override/0 = SubResource("StandardMaterial3D_grw75")
+
+[node name="bench" type="MeshInstance3D" parent="backboard (red circle)"]
+transform = Transform3D(3, 0, 0, 0, -0.0447997, 0.97459, 0, -0.194918, -0.223999, 2.48629, -4.09942, -2.97335)
+mesh = SubResource("BoxMesh_0j4pn")
+surface_material_override/0 = SubResource("StandardMaterial3D_uojgb")
+
+[node name="left bench leg" type="MeshInstance3D" parent="backboard (red circle)/bench"]
+transform = Transform3D(-0.199967, -0.0181264, 0.000245121, 0.00363155, -0.999246, 0.00683689, 0.000120991, 0.0342015, 0.199883, 0.410258, -0.860044, -1.23819)
+mesh = SubResource("BoxMesh_narcd")
+surface_material_override/0 = SubResource("StandardMaterial3D_xr1d8")
+
+[node name="right bench leg" type="MeshInstance3D" parent="backboard (red circle)/bench"]
+transform = Transform3D(-0.199967, -0.0181264, 0.000245121, 0.00363155, -0.999246, 0.00683683, 0.000120991, 0.0342015, 0.199883, -0.416845, -1.31601, -1.14104)
+mesh = SubResource("BoxMesh_narcd")
+surface_material_override/0 = SubResource("StandardMaterial3D_bo5qo")
+
+[node name="back of the bench" type="MeshInstance3D" parent="backboard (red circle)/bench/right bench leg"]
+transform = Transform3D(3, 2.6077e-08, 0, -2.79397e-09, 0.4, 0, 3.72529e-09, -3.72529e-08, 0.2, -8.76235, 52.9852, -36.9416)
+mesh = SubResource("BoxMesh_tvfxj")
+surface_material_override/0 = SubResource("StandardMaterial3D_2unr2")
+
+[node name="Part_C" parent="backboard (red circle)/bench/right bench leg" instance=ExtResource("1_ys316")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.998063, 0, -0.0622158, 0, 1, 0, 0.0622158, 0, -0.998063, -0.323823, 5.3261, -9.70286)
