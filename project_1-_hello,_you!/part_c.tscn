@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://clhttn3a0ep70"]
+[gd_scene load_steps=3 format=3 uid="uid://clhttn3a0ep70"]
+
+[ext_resource type="Texture2D" uid="uid://d3cmjtfawxf61" path="res://icon.svg" id="1_e15qq"]
+
+[sub_resource type="FontVariation" id="FontVariation_ovfvb"]
 
 [node name="Part_C" type="Control"]
 layout_mode = 3
@@ -9,11 +13,35 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PlaceholderLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 656.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.143
+anchor_top = 0.42
+anchor_right = 0.143
+anchor_bottom = 0.42
+offset_left = -205.736
+offset_top = -304.16
+offset_right = 1046.26
+offset_bottom = 351.84
+theme_override_fonts/font = SubResource("FontVariation_ovfvb")
 theme_override_font_sizes/font_size = 20
-text = "Add more labels, images, and other Control nodes to this scene to build your personal poster for Part C.
+text = ".
+Name: Kash Lalwer-Okonkwo 
+Fun Fact: I am 6'0 tall, I like to eat, sleep, kill in basketball, and elevate myself through GOD and other aspects of my life every day.
+My Favorite Games: Apex Legends, Madden, 2k, Fortnite, and Fall Guys.
 
-Remember that you may need to scroll down to \"Theme Overrides > Font Sizes\" in the Inspector 
-to make your labels big enough to read. (This is font size 20px, for reference)."
+ "
+
+[node name="TextureRect" type="TextureRect" parent="PlaceholderLabel"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 187.0
+offset_right = 135.0
+offset_bottom = 388.0
+texture = ExtResource("1_e15qq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 40.0
+offset_bottom = 40.0

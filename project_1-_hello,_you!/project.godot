@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Project 1: Hello, You!"
+run/main_scene="uid://clwrsdsnmy3md"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://d3cmjtfawxf61"
 
 [rendering]
 
