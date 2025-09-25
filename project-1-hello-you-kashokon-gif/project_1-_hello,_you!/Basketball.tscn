@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://4sy4oeoj170"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_5anyj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxeeu"]
+albedo_color = Color(0.633847, 0.299675, 0.092473, 1)
+
+[node name="Part_B" type="Node3D"]
+
+[node name="ball body" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.372416, 0.873856, 0.417704)
+mesh = SubResource("SphereMesh_5anyj")
+surface_material_override/0 = SubResource("StandardMaterial3D_pxeeu")
+
+[node name="ball body2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.395673, 0.0586749, 0, -0.0586749, -0.395673, 0, 0, 0, 0.4, 0.900042, 1.13791, 1.19209e-07)
+mesh = SubResource("SphereMesh_5anyj")
+surface_material_override/0 = SubResource("StandardMaterial3D_pxeeu")
+
+[node name="ball body3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.395673, 0.0586749, 0, -0.0586749, -0.395673, 0, 0, 0, 0.4, 0.877445, 1.14833, -0.0216331)
+mesh = SubResource("SphereMesh_5anyj")
+surface_material_override/0 = SubResource("StandardMaterial3D_pxeeu")
+
+[node name="ball body4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.395673, 0.0586749, 0, -0.0586749, -0.395673, 0, 0, 0, 0.4, 0.900042, 1.13791, 1.19209e-07)
+mesh = SubResource("SphereMesh_5anyj")
+surface_material_override/0 = SubResource("StandardMaterial3D_pxeeu")
+
+[node name="ball body5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.395673, 0.0586749, 0, -0.0586749, -0.395673, 0, 0, 0, 0.4, 0.900042, 1.13791, 1.19209e-07)
+mesh = SubResource("SphereMesh_5anyj")
+surface_material_override/0 = SubResource("StandardMaterial3D_pxeeu")
+
+[node name="ball body6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.395673, 0.0586749, 0, -0.0586749, -0.395673, 0, 0, 0, 0.4, 0.900042, 1.13791, 1.19209e-07)
+mesh = SubResource("SphereMesh_5anyj")
+surface_material_override/0 = SubResource("StandardMaterial3D_pxeeu")
